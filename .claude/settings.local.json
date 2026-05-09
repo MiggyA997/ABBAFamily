@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sips -g pixelWidth -g pixelHeight \"/Users/miggy.a/Dev/Websites/ABBA Family/images/heart-tree.png\")",
+      "WebFetch(domain:www.onebehavior.com)",
+      "Bash(perl -i -pe 's/o\\\\\\\\u201cNo tengo idea por dónde empezar,\\\\\\\\u201d Vamos/o \\\\\\\\u201cNo tengo idea por dónde empezar.\\\\\\\\u201d Vamos/g' translations.js)",
+      "Bash(sed -n '370,373p' translations.js)"
+    ]
+  }
+}
