@@ -21,9 +21,11 @@
       "nav.langToggleAria": "Cambiar idioma a español",
       "nav.callAria": "Call us",
       "nav.cta": "Free Consultation",
+      "nav.logoAlt": "ABBA Family Therapy",
 
       // Hero
-      "hero.eyebrow": "ABA Therapy · Doral, FL",
+      "hero.service": "ABA Therapy",
+      "hero.location": "Miami, FL",
       "hero.line1": "Empowering Children.",
       "hero.line2": "Supporting Families.",
       "hero.line3": "Across Miami-Dade & Broward.",
@@ -31,8 +33,7 @@
         "Individualized, evidence-based ABA Therapy services that help children learn, grow, and reach their fullest potential, while we support the families who love them. At home, at school, or in the community, in English or Spanish, across Miami-Dade and Broward.",
       "hero.cta1": "Free Consultation",
       "hero.cta2": "See our services",
-      "hero.imgAlt":
-        "ABBA Family Therapy heart tree. A symbol of growth, love, and family.",
+      "hero.logoAlt": "ABBA Family Therapy logo",
 
       // Trust strip
       "trust.bcba": "<strong>BCBA-led</strong> care",
@@ -168,8 +169,7 @@
       "contact.heading": "We're Here to Help",
       "contact.intro":
         "Send a message, give us a call, or stop by. Natalia or someone on her team will respond within one business day. Every question is welcome. Just share what's on your mind.",
-      "contact.photoAria": "Photo of Natalia or therapist with child",
-      "contact.photoHint": "Photo of Natalia or therapist with child",
+      "contact.photoAlt": "Natalia with a child during therapy",
       "contact.callAria": "Call 786-752-7992",
       "contact.altPhoneLabel": "Or call",
       "contact.label.call": "Call",
@@ -229,9 +229,11 @@
       "nav.langToggleAria": "Switch language to English",
       "nav.callAria": "Llámenos",
       "nav.cta": "Consulta Gratuita",
+      "nav.logoAlt": "ABBA Family Therapy",
 
       // Hero
-      "hero.eyebrow": "Terapia ABA · Doral, FL",
+      "hero.service": "Terapia ABA",
+      "hero.location": "Miami, FL",
       "hero.line1": "Empoderando a los Niños.",
       "hero.line2": "Apoyando a las Familias.",
       "hero.line3": "En Miami-Dade y Broward.",
@@ -239,8 +241,7 @@
         "Servicios de Terapia ABA individualizados y basados en evidencia que ayudan a los niños a aprender, crecer y alcanzar su máximo potencial, mientras apoyamos a las familias que los aman. En casa, en la escuela o en la comunidad, en inglés o español, en Miami-Dade y Broward.",
       "hero.cta1": "Consulta Gratuita",
       "hero.cta2": "Ver nuestros servicios",
-      "hero.imgAlt":
-        "El árbol corazón de ABBA Family Therapy. Símbolo de crecimiento, amor y familia.",
+      "hero.logoAlt": "Logotipo de ABBA Family Therapy",
 
       // Trust strip
       "trust.bcba": "Atención dirigida por <strong>BCBA</strong>",
@@ -377,10 +378,7 @@
       "contact.heading": "Estamos Aquí para Ayudar",
       "contact.intro":
         "Envíe un mensaje, llámenos o visítenos. Natalia o alguien de su equipo responderá en menos de un día hábil. Toda pregunta es bienvenida. Solo comparta lo que tiene en mente.",
-      "contact.photoAria":
-        "Foto de Natalia o de una terapeuta con un niño",
-      "contact.photoHint":
-        "Foto de Natalia o de una terapeuta con un niño",
+      "contact.photoAlt": "Natalia con un niño durante la terapia",
       "contact.callAria": "Llamar al 786-752-7992",
       "contact.altPhoneLabel": "O llame",
       "contact.label.call": "Llamar",

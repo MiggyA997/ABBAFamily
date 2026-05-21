@@ -130,27 +130,15 @@ a:hover {
 }
 
 .logo {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
+  display: block;
+  flex-shrink: 0;
   text-decoration: none;
 }
 
-.logo-name {
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 1.3rem;
-  color: var(--color-gold);
-  letter-spacing: 0.01em;
-}
-
-.logo-sub {
-  font-family: var(--font-body);
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--color-teal);
+.logo-img {
+  display: block;
+  width: auto;
+  height: clamp(2rem, 5vw, 2.75rem);
 }
 
 .nav {
@@ -420,7 +408,7 @@ p:last-child {
     justify-content: center;
   }
 
-  .hero-tree-photo img {
+  .hero-logo-photo img {
     max-height: min(50vh, 460px);
     object-position: center;
   }
@@ -437,6 +425,44 @@ p:last-child {
 
 .eyebrow--coral {
   color: var(--color-coral);
+}
+
+.hero-headline {
+  margin: 0 0 1.15rem;
+}
+
+.hero-service {
+  display: block;
+  font-size: clamp(2.75rem, 6vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-teal);
+  text-transform: uppercase;
+}
+
+.hero-location {
+  display: block;
+  margin-top: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-teal);
+}
+
+.hero-location::before {
+  content: "·";
+  margin-right: 0.35em;
+}
+
+.hero-tagline {
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 2.8vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
 }
 
 .hero-line {
@@ -461,12 +487,12 @@ p:last-child {
   gap: 0.75rem;
 }
 
-.hero-tree-photo {
+.hero-logo-photo {
   flex: 0 1 auto;
   max-width: min(100%, 560px);
 }
 
-.hero-tree-photo img {
+.hero-logo-photo img {
   width: auto;
   max-width: 100%;
   height: auto;
@@ -474,16 +500,17 @@ p:last-child {
   margin-left: auto;
   display: block;
   object-fit: contain;
-  object-position: right center;
+  object-position: center;
 }
 
 @media (min-width: 881px) {
-  .hero-tree-photo {
+  .hero-logo-photo {
     max-width: min(100%, min(52vw, 600px));
   }
 
-  .hero-tree-photo img {
+  .hero-logo-photo img {
     max-height: min(calc(100svh - 6rem), 720px);
+    margin-inline: auto;
   }
 }
 
@@ -1098,8 +1125,17 @@ p:last-child {
 .contact-photo {
   margin: 0 0 1.5rem;
   max-width: 480px;
-  aspect-ratio: 5 / 4;
   border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.contact-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center 20%;
 }
 
 .contact-phone-cta {
