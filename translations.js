@@ -34,6 +34,7 @@
       "hero.cta1": "Free Consultation",
       "hero.cta2": "See our services",
       "hero.logoAlt": "ABBA Family Therapy logo",
+      "hero.slideshowAria": "Hero slideshow",
 
       // Trust strip
       "trust.bcba": "<strong>BCBA-led</strong> care",
@@ -242,6 +243,7 @@
       "hero.cta1": "Consulta Gratuita",
       "hero.cta2": "Ver nuestros servicios",
       "hero.logoAlt": "Logotipo de ABBA Family Therapy",
+      "hero.slideshowAria": "Presentación de inicio",
 
       // Trust strip
       "trust.bcba": "Atención dirigida por <strong>BCBA</strong>",

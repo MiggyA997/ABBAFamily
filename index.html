@@ -123,6 +123,14 @@
     <main id="main">
       <!-- 1. Hero -->
       <section class="hero" aria-labelledby="hero-heading">
+        <div class="hero-slideshow" aria-hidden="true">
+          <div class="hero-slide hero-slide--coral hero-slide--active"></div>
+          <div class="hero-slide hero-slide--teal"></div>
+          <div class="hero-slide hero-slide--olive"></div>
+          <div class="hero-slide hero-slide--gold"></div>
+        </div>
+        <div class="hero-slideshow-overlay" aria-hidden="true"></div>
+
         <div class="container hero-grid">
           <div class="hero-copy">
             <h1 id="hero-heading" class="hero-headline">
@@ -156,6 +164,13 @@
               />
             </div>
           </div>
+        </div>
+
+        <div class="hero-slideshow-dots" role="tablist" data-i18n-aria="hero.slideshowAria" aria-label="Hero slideshow">
+          <button type="button" class="hero-dot hero-dot--active" data-slide="0" role="tab" aria-selected="true" aria-label="Show slide 1"></button>
+          <button type="button" class="hero-dot" data-slide="1" role="tab" aria-selected="false" aria-label="Show slide 2"></button>
+          <button type="button" class="hero-dot" data-slide="2" role="tab" aria-selected="false" aria-label="Show slide 3"></button>
+          <button type="button" class="hero-dot" data-slide="3" role="tab" aria-selected="false" aria-label="Show slide 4"></button>
         </div>
       </section>
 
@@ -570,5 +585,68 @@
       document.getElementById("year").textContent = new Date().getFullYear();
     </script>
     <script src="translations.js" defer></script>
+    <script>
+      (function () {
+        var hero = document.querySelector(".hero");
+        var slideshow = hero && hero.querySelector(".hero-slideshow");
+        if (!slideshow) return;
+
+        var slides = Array.prototype.slice.call(slideshow.querySelectorAll(".hero-slide"));
+        var dots = Array.prototype.slice.call(hero.querySelectorAll(".hero-dot"));
+        if (slides.length < 2) return;
+
+        var INTERVAL = 6000;
+        var current = 0;
+        var timer = null;
+        var paused = false;
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+        function setIndex(i) {
+          current = (i + slides.length) % slides.length;
+          slides.forEach(function (s, idx) {
+            s.classList.toggle("hero-slide--active", idx === current);
+          });
+          dots.forEach(function (d, idx) {
+            var on = idx === current;
+            d.classList.toggle("hero-dot--active", on);
+            d.setAttribute("aria-selected", on ? "true" : "false");
+          });
+        }
+
+        function next() { setIndex(current + 1); }
+
+        function start() {
+          stop();
+          if (paused || reduce.matches) return;
+          timer = setInterval(next, INTERVAL);
+        }
+
+        function stop() {
+          if (timer) { clearInterval(timer); timer = null; }
+        }
+
+        hero.addEventListener("mouseenter", function () { paused = true; stop(); });
+        hero.addEventListener("mouseleave", function () { paused = false; start(); });
+
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) stop(); else start();
+        });
+
+        dots.forEach(function (d, i) {
+          d.addEventListener("click", function () {
+            setIndex(i);
+            start();
+          });
+        });
+
+        if (reduce.addEventListener) {
+          reduce.addEventListener("change", function () {
+            if (reduce.matches) stop(); else start();
+          });
+        }
+
+        start();
+      })();
+    </script>
   </body>
 </html>
